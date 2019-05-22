@@ -25,8 +25,9 @@ class App extends Component {
     }, ()=>{console.log(this.state.cart)})
 
   }
-  removeItem = (element,i) => {
-
+  removeItem = (index) => {
+    const newCart = [...this.state.cart.slice(0, index), ...this.state.cart.slice(index, -1)];
+    this.setState({ cart: newCart });
   }
   render() {
     let meal = new Date().getHours() < 13 ? 'Desayuno' : 'Comida';/*se usa la api de la hora para diferenciar entre desayunos y comidas*/
@@ -56,7 +57,7 @@ class App extends Component {
     {/*comanda*/}
     </div>
     <Menu title={meal} menu={this.state.comidas} meal={meal} addItem={this.addItem}/>
-    <Cart cart={this.state.cart} removeItem={this.props.removeItem}/>
+    <Cart cart={this.state.cart} removeItem={this.removeItem}/>
 
     </div>
 
