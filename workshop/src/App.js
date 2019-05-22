@@ -25,20 +25,22 @@ class App extends Component {
     }, ()=>{console.log(this.state.cart)})
 
   }
+  removeItem = (element,i) => {
+
+  }
   render() {
     let meal = new Date().getHours() < 13 ? 'Desayuno' : 'Comida';/*se usa la api de la hora para diferenciar entre desayunos y comidas*/
-    let carrito = this.state.cart.map((element, i) => {
+    /*let comanda = this.state.cart.map((element, i) => {
       return (
       <div key={i}>
       
       </div>)
-    })
-    
+    })*/
     return (
     <div className="App">
     <header className="App-header">
         <nav className="navbar navbar-dark bg-dark">
-          <a href="#" className="h1">Desayunos/Comidas</a>
+          <h1 className="h1">Desayunos/Comidas</h1>
           <span className="badge badge-pill badge-light ml-4">
         {this.state.comidas.length}
         </span>
@@ -51,10 +53,10 @@ class App extends Component {
         {/*<img src={hamburguesa} className="App-logo" alt="logo 0px" />*/}
       </header>
     <div>
-    {carrito}
+    {/*comanda*/}
     </div>
     <Menu title={meal} menu={this.state.comidas} meal={meal} addItem={this.addItem}/>
-    <Cart cart={this.state.cart}/>
+    <Cart cart={this.state.cart} removeItem={this.props.removeItem}/>
 
     </div>
 
