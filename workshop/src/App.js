@@ -18,17 +18,20 @@ class App extends Component {
     }
   }
   addItem = (item) => {
-    let newCart = [...this.state.cart];
-    newCart.push(item);
+    console.log(item)
+    // Las siguientes dos lineas muta el array, haciendo inutil el uso de spread operator. Se puede simplificar como en la linea 26
+    //let newCart = [...this.state.cart];
+    //newCart.push(item);
     this.setState({
-    cart: newCart
-    }, ()=>{console.log(this.state.cart)})
-
+    cart: [...this.state.cart, item]
+    })
   }
+  
   removeItem = (index) => {
     const newCart = [...this.state.cart.slice(0, index), ...this.state.cart.slice(index, -1)];
     this.setState({ cart: newCart });
   }
+
   render() {
     let meal = new Date().getHours() < 13 ? 'Desayuno' : 'Comida';/*se usa la api de la hora para diferenciar entre desayunos y comidas*/
     /*let comanda = this.state.cart.map((element, i) => {

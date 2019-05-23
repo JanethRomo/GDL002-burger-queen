@@ -2,27 +2,27 @@
 let comidas = [
     {
         "product":"Café americano",
-        "price":5,
+        "price": 5,
         "meal": "Desayuno"
     },
     {
         "product":"Café con leche",
-        "price":7,
+        "price": 7,
         "meal": "Desayuno"
     },
     {
         "product":"Sandwich de jamon y queso",
-        "price":10,
+        "price": 10,
         "meal": "Desayuno"
     },
     {
         "product":"Jugo de frutas natural",
-        "price":7,
+        "price": 7,
         "meal": "Desayuno"
     },
     {
         "product":"Hamburguesa simple",
-        "price":10,
+        "price": 10,
         "meal": "Comida"
     },
     {
