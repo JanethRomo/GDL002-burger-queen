@@ -7,7 +7,7 @@ const Menu = (props) => {
           }).map((comida, i) => {
             return (
               <div className="col-md-4" key={comida.product}>
-                <section onClick={()=> props.addItem(comida)} className="btn btn-warning card-mt-4 card-header">
+                <section onClick={()=> props.addItem(comida)} className="btn btn-outline-warning card-mt-4 card-header">
                     <h3>{comida.product}</h3> 
                     <p className="badge badge-pill badge-danger ml-1"> ${comida.price}.00</p>                    
                 </section>
@@ -16,7 +16,7 @@ const Menu = (props) => {
           });
         return(
             <div>
-                {comidas}
+            {comidas}
             </div>
             
     )

@@ -9,11 +9,13 @@ class Cart extends Component { // este componente es la parte clave para la coma
           return (
               //como toda funcion debe de retornar algo y debe de aparecer en pantalla
               //Dentro de divs va la info de react en donde por medio de parrafos se muestra la informacion que se pinta en pantalla
-            <div key={index}>
-                <p>{element.product}</p>
-                <p>${element.price}.00</p>
+            <div className="card badge badge-pill badge-warning ml-1" key={index}>
+                <div className="card-body ">
+                <h5 class="card-title">{element.product}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${element.price}.00</h6>
                 <div>
-                    <button onClick={()=>this.props.removeItem(index)} className="badge badge-pill badge-warning ml-1">Eliminar</button>
+                </div>
+                    <button onClick={()=>this.props.removeItem(index)} className="badge badge-pill badge-danger ml-1">Eliminar</button>
                 </div>
             </div>
             )
@@ -29,8 +31,8 @@ class Cart extends Component { // este componente es la parte clave para la coma
        return (
            <div>
             {totalCuenta}
-            <p>total: $ {totalSuma}.00</p>
-           </div>   
+            <p className="alert alert-primary mb-0">Total:${totalSuma}.00</p>
+           </div>
         )
     }
 }

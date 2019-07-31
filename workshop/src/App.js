@@ -43,7 +43,7 @@ class App extends Component {
     return (
     <div className="App">
     <header className="App-header">
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-warning">
           <h1 className="h1">Desayunos/Comidas</h1>
           <span className="badge badge-pill badge-light ml-4">
         {this.state.comidas.length}
